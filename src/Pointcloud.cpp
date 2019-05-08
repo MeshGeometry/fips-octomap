@@ -37,6 +37,7 @@
 #include <ciso646>
 
 #if defined(_MSC_VER) || defined(_LIBCPP_VERSION)
+  #include <random>
   #include <algorithm>
 #else
   #include <ext/algorithm>
@@ -208,9 +209,11 @@ namespace octomap {
     point3d_collection samples;
     // visual studio does not support random_sample_n and neither does libc++
   #if defined(_MSC_VER) || defined(_LIBCPP_VERSION)
+    std::random_device rd;
+    std::mt19937 g(rd());
     samples.reserve(this->size());
     samples.insert(samples.end(), this->begin(), this->end());
-    std::random_shuffle(samples.begin(), samples.end());
+    std::shuffle(samples.begin(), samples.end(), g);
     samples.resize(num_samples);
   #else
     random_sample_n(begin(), end(), std::back_insert_iterator<point3d_collection>(samples), num_samples);
