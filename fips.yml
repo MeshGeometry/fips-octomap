@@ -1,0 +1,11 @@
+#
+# fips-octomap
+#
+---
+exports:
+    header-dirs: 
+      - octomap/octomap/include
+
+    modules:
+      octomap: .
+
