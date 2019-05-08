@@ -1,3 +1,0 @@
-[submodule "octomap"]
-	path = octomap
-	url = https://github.com/OctoMap/octomap.git

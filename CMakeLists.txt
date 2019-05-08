@@ -1,3 +1,5 @@
+set(CMAKE_CXX_STANDARD 17)
+
 if (NOT FIPS_IMPORT)
     cmake_minimum_required(VERSION 2.8)
     get_filename_component(FIPS_ROOT_DIR "../fips" ABSOLUTE)
@@ -13,18 +15,18 @@ if ((FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX) AND NOT (FIPS_RASPBERRYPI OR FIPS
      include_directories(octomap/include)
 
      fips_files(
-        octomap/src/math/Pose6D.cpp
-        octomap/src/math/Quaternion.cpp
-        octomap/src/math/Vector3.cpp          
-        octomap/src/AbstractOcTree.cpp
-        octomap/src/AbstractOccupancyOcTree.cpp
-        octomap/src/Pointcloud.cpp
-        octomap/src/ScanGraph.cpp
-        octomap/src/CountingOcTree.cpp
-        octomap/src/OcTree.cpp
-        octomap/src/OcTreeNode.cpp
-        octomap/src/OcTreeStamped.cpp
-        octomap/src/ColorOcTree.cpp
+        octomap/octomap/src/math/Pose6D.cpp
+        octomap/octomap/src/math/Quaternion.cpp
+        octomap/octomap/src/math/Vector3.cpp          
+        octomap/octomap/src/AbstractOcTree.cpp
+        octomap/octomap/src/AbstractOccupancyOcTree.cpp
+        octomap/octomap/src/Pointcloud.cpp
+        octomap/octomap/src/ScanGraph.cpp
+        octomap/octomap/src/CountingOcTree.cpp
+        octomap/octomap/src/OcTree.cpp
+        octomap/octomap/src/OcTreeNode.cpp
+        octomap/octomap/src/OcTreeStamped.cpp
+        octomap/octomap/src/ColorOcTree.cpp
       ) 
 
 
