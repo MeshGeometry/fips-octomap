@@ -4,7 +4,7 @@
 ---
 exports:
     header-dirs: 
-      - octomap/octomap/include
+      - include
 
     modules:
       octomap: .
